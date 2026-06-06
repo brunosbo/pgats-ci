@@ -1,14 +1,16 @@
 # CI de Nível 04 - Pipeline integrada ao Build do codigo
 
 # nome da pipeline
-name: "Execução Integrada"
+name: "N4 - Execução Integrada"
 
 # gatilhos / triggers - regras de disparo
 # gatilho manual = workflow_dispatch
 
 on:
-    workflow_dispatch:
-      
+    workflow_dispatch:   
+    push: 
+      branches:
+        - master
 #tarefas dentro da pipeline = jobs
 
 jobs:
@@ -90,6 +92,14 @@ jobs:
             
             - name: Executando testes e2e
               run: yarn run e2e
+
+            - name: Salvando relatorios de testes
+              uses: actions/upload-artifact@v4
+              if: ${{ always() }}
+              with:
+                path:     ./playwright-report
+                name: Relatorios de testes e2e
+            
     
     deploy:
       runs-on: ubuntu-latest
