@@ -10,7 +10,7 @@ name: "Execução por Deploy"
 
 on:
     workflow_run:
-      workflows: ['Execucao Manual', 'Scheduled Execution']
+      workflows: ['Execucao Manual', 'Execução agendada']
       types: 
         - completed
 
