@@ -7,7 +7,7 @@ name: "Execução agendada"
 # gatilho manual = workflow_dispatch
 # gatilho agendado = schedule
 
-on:
+on: workflow_dispatch:
     schedule:
     # cronograma de execucao
     # 1- minuto, 2- hora , 3- dia do mes, 4- mes, 5- dia da semana
