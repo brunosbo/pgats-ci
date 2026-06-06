@@ -5,7 +5,6 @@ name: "Execução agendada"
 
 # gatilhos / triggers - regras de disparo
 on:
-  workflow_dispatch: # Permite rodar manualmente pelo botão no GitHub
   schedule:
     # cronograma de execucao
     # 1- minuto, 2- hora , 3- dia do mes, 4- mes, 5- dia da semana
